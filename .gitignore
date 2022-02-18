@@ -128,3 +128,5 @@ nb-configuration.xml
 composer.lock
 tests
 .env
+
+*.http

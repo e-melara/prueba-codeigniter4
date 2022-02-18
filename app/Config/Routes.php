@@ -49,3 +49,8 @@ $routes->get('/', 'Home::index');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+
+$routes->group('/api', function ($routes) {
+    $routes->resource('employee');
+});
