@@ -37,7 +37,7 @@ class Logger extends BaseConfig
      *
      * @var array|int
      */
-    public $threshold = 4;
+    public $threshold = [4, 7];
 
     /**
      * --------------------------------------------------------------------------
@@ -120,7 +120,7 @@ class Logger extends BaseConfig
              * By default, logs are written to WRITEPATH . 'logs/'
              * Specify a different destination here, if desired.
              */
-            'path' => '',
+            'path' => 'public',
         ],
 
         /*

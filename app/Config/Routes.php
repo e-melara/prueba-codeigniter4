@@ -50,6 +50,7 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
+$routes->post('/login', "Auth::login");
 
 $routes->group('/api', function ($routes) {
     $routes->resource('employee');
