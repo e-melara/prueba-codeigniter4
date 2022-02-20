@@ -17,9 +17,9 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('UserController');
 $routes->setDefaultMethod('index');
-$routes->setTranslateURIDashes(false);
+$routes->setTranslateURIDashes(true);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 
@@ -51,7 +51,9 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 }
 
 $routes->post('/login', "Auth::login");
-
-$routes->group('/api', function ($routes) {
-    $routes->resource('employee');
+$routes->group('api', function ($routes) {
+    $routes->resource('users', [
+        "controller" => "UserController",
+        "only" => ["show", "index", "create", "delete"]
+    ]);
 });

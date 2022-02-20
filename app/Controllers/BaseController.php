@@ -64,9 +64,6 @@ class BaseController extends Controller
         $input = $request->getPost();
         if(empty($input)) {
             $input = $request->getBody();
-            if(empty($input)) {
-                throw new Exception('Debe ingrear valores validos para la peticion');
-            }
             $input = json_decode($request->getBody(), true);
         }
         return $input;

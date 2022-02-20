@@ -11,7 +11,7 @@ class UserModel extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = [
-        "nombres", "apellidos", "email", "password", "status", "rol"
+        "nombres", "apellidos", "email", "password"
     ];
 
     // Dates
@@ -23,12 +23,12 @@ class UserModel extends Model
 
     public function beforeInsert(array $data)
     {
-        $this->getUpdatedDataWithHashedPassword($data);
+        return $this->getUpdatedDataWithHashedPassword($data);
     }
 
     public function beforeUpdate(array $data)
     {
-        $this->getUpdatedDataWithHashedPassword($data);
+        return $this->getUpdatedDataWithHashedPassword($data);
     }
 
     private function getUpdatedDataWithHashedPassword(array $data): array

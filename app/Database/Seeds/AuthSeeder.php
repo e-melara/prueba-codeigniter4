@@ -13,6 +13,14 @@ class AuthSeeder extends Seeder
         for ($i=0; $i < $numLimit; $i++) { 
             $this->db->table('users')->insert($this->generateUser());
         }
+
+        $this->db->table('users')->insert([
+            "nombres" => "Edwin",
+            "apellidos" => "Melara Landaverde",
+            "email" => "melara0606@gmail.com",
+            "password" => password_hash("1234567890", PASSWORD_BCRYPT),
+            "rol"   => "ADMINISTRADOR",
+        ]);
     }
 
     public function generateUser() : array
