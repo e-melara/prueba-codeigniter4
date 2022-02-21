@@ -1,4 +1,0 @@
-ERROR - 2022-02-19 17:08:35 --> null
-ERROR - 2022-02-19 17:09:30 --> null
-ERROR - 2022-02-19 17:59:08 --> Duplicate entry 'edwin.melara.landaverde@gmail.com' for key 'users.email'
-ERROR - 2022-02-19 18:04:29 --> Duplicate entry 'edwin.melara.landaverde12@gmail.com' for key 'users.email'

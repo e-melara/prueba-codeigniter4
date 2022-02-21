@@ -130,3 +130,5 @@ tests
 .env
 
 *.http
+
+loginold.php

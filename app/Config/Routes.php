@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('UserController');
+$routes->setDefaultController('AuthController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
@@ -31,7 +31,6 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
 
 /*
  * --------------------------------------------------------------------
@@ -50,10 +49,25 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-$routes->post('/login', "Auth::login");
+// api routes resfull
+$routes->post('/login-api', "Auth::login");
 $routes->group('api', function ($routes) {
     $routes->resource('users', [
         "controller" => "UserController",
         "only" => ["show", "index", "create", "delete"]
     ]);
+});
+
+// routes for view normal
+$routes->get('/login', 'AuthController::index', ['as' => 'login']);
+$routes->post('/login', 'AuthController::create');
+$routes->get('/logout', 'AuthController::logout', ['as' => 'logout']);
+
+$routes->group('admin', ['filter' => 'authFilter:administrador'], function($routes) {
+    $routes->get('/', 'Home::index', ['as' => 'index']);
+    $routes->resource('users', ['controller' => "UsuariosController", 'as' => 'users']);
+});
+
+$routes->group('usuario', ['filter' => 'authFilter:usuario'], function ($routes) {
+    $routes->get('/', 'Home::usuario', ['as' => 'usuario']);
 });
