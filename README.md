@@ -35,6 +35,6 @@ php spark serve
 
 
 Los usuarios son:
-  -> Administrador melara@gmail.com ---> password: 1234567890
-  -> Los usuarios normales son creados por medio de Faker de manera aleatoria, password: 1234567890
-  -> Todos he creado por medio de los seeder
+  - Administrador melara@gmail.com ---> password: 1234567890
+  - Los usuarios normales son creados por medio de Faker de manera aleatoria, password: 1234567890
+  - Todos son creado por medio de los seeder
