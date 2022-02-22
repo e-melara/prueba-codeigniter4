@@ -39,10 +39,10 @@
                 </div>
               </div>
               <?php if(session('errors.email')): ?>
-                  <span id="password" class="error invalid-feedback">
-                    <?= session('errors.email'); ?>
-                  </span>
-                <?php endif ?>
+                <span id="password" class="error invalid-feedback">
+                  <?= session('errors.email'); ?>
+                </span>
+              <?php endif ?>
             </div>
             <div class="form-group">
               <div class="input-group mb-3">

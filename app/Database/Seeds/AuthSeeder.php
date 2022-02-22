@@ -17,7 +17,7 @@ class AuthSeeder extends Seeder
         $this->db->table('users')->insert([
             "nombres" => "Edwin",
             "apellidos" => "Melara Landaverde",
-            "email" => "melara0606@gmail.com",
+            "email" => "melara@gmail.com",
             "password" => password_hash("1234567890", PASSWORD_BCRYPT),
             "rol"   => "ADMINISTRADOR",
         ]);

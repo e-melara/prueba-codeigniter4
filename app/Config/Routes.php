@@ -66,6 +66,7 @@ $routes->get('/logout', 'AuthController::logout', ['as' => 'logout']);
 $routes->group('admin', ['filter' => 'authFilter:administrador'], function($routes) {
     $routes->get('/', 'Home::index', ['as' => 'index']);
     $routes->resource('users', ['controller' => "UsuariosController", 'as' => 'users']);
+    $routes->get('users/new', 'UsuariosController::store', ['as' => 'new']);
 });
 
 $routes->group('usuario', ['filter' => 'authFilter:usuario'], function ($routes) {

@@ -11,7 +11,7 @@ class UserModel extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = [
-        "nombres", "apellidos", "email", "password"
+        "nombres", "apellidos", "email", "password", 'status'
     ];
 
     // Dates
